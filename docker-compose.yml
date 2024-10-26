@@ -11,10 +11,10 @@ services:
 
 
   spring_app:
-    image: Raoudha.H/raoudhahajji_g3_kaddem
+    image: raoudhaaa/raoudhahajji_g3_kaddem
     container_name: devopscontainer
     restart: on-failure
     ports:
-      - 9096:9096
+      - 8083:8083
     depends_on:
       - mysqldb
