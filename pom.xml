@@ -67,7 +67,6 @@
     </build>
     <!-- Deploy to Nexus -->
     <distributionManagement>
-
         <snapshotRepository>
             <id>depoRepo</id>
             <name>Nexus Snapshot Repository</name>
