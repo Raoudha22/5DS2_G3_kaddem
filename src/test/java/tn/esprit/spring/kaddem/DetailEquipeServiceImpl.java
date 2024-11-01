@@ -57,22 +57,6 @@ class DetailEquipeServiceImplTest {
         assertThat(retrievedDetailEquipe.getIdDetailEquipe()).isEqualTo(1);
         verify(detailEquipeRepository, times(1)).findById(1);
     }
- /*
-    @Test
-   void testUpdateDetailEquipe() {
-        // Given
-        DetailEquipe detailEquipe = new DetailEquipe(1, 101, "Research");
-        when(detailEquipeRepository.findById(1)).thenReturn(Optional.of(detailEquipe));
-        when(detailEquipeRepository.save(detailEquipe)).thenReturn(detailEquipe);
-
-        // When
-        detailEquipe.setThematique("Development");
-        DetailEquipe updatedDetailEquipe = detailEquipeService.updateDetailEquipe(detailEquipe);
-
-        // Then
-        assertThat(updatedDetailEquipe.getThematique()).isEqualTo("Development");
-        verify(detailEquipeRepository, times(1)).save(detailEquipe);
-    }*/
 
     @Test
     void testRemoveDetailEquipe() {
