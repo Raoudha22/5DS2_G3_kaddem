@@ -2,7 +2,6 @@ package tn.esprit.spring.kaddem.entities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import tn.esprit.spring.kaddem.entities.Equipe;
 
 import java.io.Serializable;
 import javax.persistence.*;
