@@ -1,16 +1,16 @@
 package tn.esprit.spring.kaddem.services;
 
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.kaddem.entities.DetailEquipe;
 import tn.esprit.spring.kaddem.repositories.DetailEquipeRepository;
-
 import java.util.Optional;
-
+@Slf4j
+@AllArgsConstructor
 @Service
 public class DetailEquipeServiceImpl implements IDetailEquipeService {
-
-
-    private DetailEquipeRepository detailEquipeRepository;
+    DetailEquipeRepository detailEquipeRepository;
 
     @Override
     public DetailEquipe addDetailEquipe(DetailEquipe detailEquipe) {
