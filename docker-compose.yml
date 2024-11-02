@@ -11,7 +11,7 @@ services:
 
 
   spring_app:
-    image: montassar/montassarjaziri_g3_kaddem
+    image: montassarjaziri/devops
     container_name: devopscontainer
     restart: on-failure
     ports:
