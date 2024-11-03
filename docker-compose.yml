@@ -1,13 +1,15 @@
-version: "3.3"
-services:
-  mysqldb:
-    container_name: mysqldb
-    image: mysql:8
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - /home/mysql/data:/var/lib/mysql
+mysqldb:
+  container_name: mysqldb
+  image: mysql:8
+  restart: unless-stopped
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+  volumes:
+    - /home/mysql/data:/var/lib/mysql
+  healthcheck:
+    test: ["CMD", "mysqladmin", "ping", "--silent"]
+    interval: 10s
+    retries: 5
 
 
   spring_app:
@@ -17,4 +19,5 @@ services:
     ports:
       - 8083:8083
     depends_on:
-      - mysqldb
+      mysqldb:
+        condition: service_healthy
