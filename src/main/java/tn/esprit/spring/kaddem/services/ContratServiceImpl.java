@@ -18,9 +18,9 @@ import java.util.Set;
 @Slf4j
 @Service
 public class ContratServiceImpl implements IContratService{
-@Autowired
+
 ContratRepository contratRepository;
-@Autowired
+
 EtudiantRepository etudiantRepository;
 
 	public List<Contrat> retrieveAllContrats(){
@@ -92,7 +92,7 @@ EtudiantRepository etudiantRepository;
 	}
 
 	public float getChiffreAffaireEntreDeuxDates(Date startDate, Date endDate){
-		float differenceInTime = endDate.getTime() - startDate.getTime();
+		float differenceInTime = (float) (endDate.getTime() - startDate.getTime());
 		float differenceInDays = (differenceInTime / (1000 * 60 * 60 * 24)) % 365;
 		float differenceInmonths =differenceInDays/30;
         List<Contrat> contrats=contratRepository.findAll();
