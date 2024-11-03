@@ -3,6 +3,7 @@ package tn.esprit.spring.kaddem.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -24,7 +25,10 @@ public class Equipe implements Serializable{
     private DetailEquipe detailEquipe;
 
     public Equipe() {
-        // TODO Auto-generated constructor stub
+        this.nomEquipe = "";
+        this.niveau = Niveau.NONE;
+        this.etudiants = new HashSet<>();
+        this.detailEquipe = null;
     }
 
     public Equipe(String nomEquipe) {

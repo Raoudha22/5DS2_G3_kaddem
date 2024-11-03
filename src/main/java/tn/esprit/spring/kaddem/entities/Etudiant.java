@@ -4,6 +4,8 @@ package tn.esprit.spring.kaddem.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -22,7 +24,7 @@ public class Etudiant implements Serializable{
     private Option op;
     @OneToMany(mappedBy="etudiant", cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<Contrat> Contrats;
+    private Set<Contrat> contrats;
     @ManyToOne
     @JsonIgnore
     private Departement departement;
@@ -30,10 +32,15 @@ public class Etudiant implements Serializable{
     @ManyToMany(mappedBy="etudiants")
 
     @JsonIgnore
-  //  private Set<Equipe> equipes ;
+
     private List<Equipe> equipes ;
+
     public Etudiant() {
-        // TODO Auto-generated constructor stub
+        this.nomE = "";
+        this.prenomE = "";
+        this.op = Option.NONE;
+        this.contrats = new HashSet<>(); 
+        this.equipes = new ArrayList<>();
     }
 
     public Etudiant(String nomE, String prenomE) {
@@ -57,11 +64,11 @@ public class Etudiant implements Serializable{
     }
 
     public Set<Contrat> getContrats() {
-        return Contrats;
+        return contrats;
     }
 
     public void setContrats(Set<Contrat> contrats) {
-        Contrats = contrats;
+        contrats = contrats;
     }
 
     public Departement getDepartement() {

@@ -25,7 +25,12 @@ public class Contrat implements Serializable{
     private Etudiant etudiant;
 
     public Contrat() {
-        // TODO Auto-generated constructor stub
+        this.dateDebutContrat = new Date();
+        this.dateFinContrat = null;
+        this.specialite = null;
+        this.archive = false;
+        this.montantContrat = 0;
+        this.etudiant = null;
     }
 
     public Contrat(Date dateDebutContrat, Date dateFinContrat, Specialite specialite, Boolean archive,

@@ -3,6 +3,8 @@ package tn.esprit.spring.kaddem.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -16,8 +18,10 @@ public class Universite implements Serializable{
     @OneToMany(cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Departement> departements;
+
     public Universite() {
-        // TODO Auto-generated constructor stub
+        this.nomUniv = "";
+        this.departements = new HashSet<>();
     }
 
     public Universite(String nomUniv) {
