@@ -16,9 +16,12 @@ import java.util.Set;
 @Service
 public class UniversiteServiceImpl implements IUniversiteService{
     private static final Logger logger = LoggerFactory.getLogger(UniversiteServiceImpl.class);
-@Autowired
+    // Define constants for reuse
+    private static final String UNIVERSITE_NOT_FOUND = "Universite not found with id: ";
+
+
     UniversiteRepository universiteRepository;
-@Autowired
+
     DepartementRepository departementRepository;
     public UniversiteServiceImpl() {
         logger.info("UniversiteServiceImpl instance created.");
@@ -38,7 +41,7 @@ return  (universiteRepository.save(u));
 
   public Universite retrieveUniversite (Integer idUniversite){
       return universiteRepository.findById(idUniversite)
-              .orElseThrow(() -> new EntityNotFoundException("Universite not found with id: " + idUniversite));
+              .orElseThrow(() -> new EntityNotFoundException(UNIVERSITE_NOT_FOUND + idUniversite));
     }
     public  void deleteUniversite(Integer idUniversite){
         universiteRepository.delete(retrieveUniversite(idUniversite));
@@ -46,9 +49,9 @@ return  (universiteRepository.save(u));
 
     public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement){
         Universite u= universiteRepository.findById(idUniversite)
-                .orElseThrow(() -> new EntityNotFoundException("Universite not found with id: " + idUniversite));
+                .orElseThrow(() -> new EntityNotFoundException(UNIVERSITE_NOT_FOUND + idUniversite));
         Departement d= departementRepository.findById(idDepartement)
-                .orElseThrow(() -> new EntityNotFoundException("Departement not found with id: " + idDepartement));
+                .orElseThrow(() -> new EntityNotFoundException(UNIVERSITE_NOT_FOUND + idDepartement));
 
         u.getDepartements().add(d);
         universiteRepository.save(u);
@@ -56,7 +59,7 @@ return  (universiteRepository.save(u));
 
     public Set<Departement> retrieveDepartementsByUniversite(Integer idUniversite){
         Universite u=universiteRepository.findById(idUniversite)
-                .orElseThrow(() -> new EntityNotFoundException("Universite not found with id: " + idUniversite));
+                .orElseThrow(() -> new EntityNotFoundException(UNIVERSITE_NOT_FOUND + idUniversite));
 
         return u.getDepartements();
     }
