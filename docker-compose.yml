@@ -1,17 +1,19 @@
-version: "3.3"
 services:
   mysqldb:
     container_name: mysqldb
     image: mysql:8
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - /home/mysql/data:/var/lib/mysql
-
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
+      interval: 10s
+      retries: 5
 
   spring_app:
-    image: yesminemejri/yesminemejri_g3_kaddem
+    image: montassarjaziri/devopsimage
     container_name: devopscontainer
     restart: on-failure
     ports:
