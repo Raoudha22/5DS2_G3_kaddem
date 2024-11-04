@@ -5,11 +5,24 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
+import tn.esprit.spring.kaddem.entities.Departement;
 
 public class UniversityTest {
 
     private Universite university;
+     @Mock
+    private UniversiteRepository universiteRepository;
 
+    @Mock
+    private DepartementRepository departementRepository;
+
+    @InjectMocks
+    private UniversiteServiceImpl universiteService;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
     @BeforeEach
     public void setup() {
         university = new Universite();
