@@ -5,7 +5,7 @@ pipeline {
         stage('Récupération du code') {
             steps {
                 // Clone le dépôt de ton projet et sélectionne la branche.
-                git branch: 'universtiy', url: 'https://github.com/Raoudha22/5DS2_G3_kaddem.git'
+                git branch: 'university', url: 'https://github.com/Raoudha22/5DS2_G3_kaddem.git'
             }
         }
         stage('Nettoyage et compilation avec Maven') {
