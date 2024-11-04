@@ -13,7 +13,7 @@ services:
       retries: 5
 
   spring_app:
-    image: yesminemejri/devopsimage
+    image: yesminemejri/yesminemejri_g3_kaddem
     container_name: devopscontainer
     restart: on-failure
     ports:
