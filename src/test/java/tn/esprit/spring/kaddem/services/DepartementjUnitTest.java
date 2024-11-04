@@ -1,4 +1,4 @@
-package tn.esprit.spring.kaddem;
+package tn.esprit.spring.kaddem.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
