@@ -32,7 +32,7 @@ public class Universite implements Serializable{
     }
     
     public void setIdUniversite(Integer id) {
-    this.idUniversite = id;
+    this.idUniv = id;
     }
 
 
