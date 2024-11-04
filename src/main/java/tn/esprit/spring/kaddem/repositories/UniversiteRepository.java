@@ -6,6 +6,8 @@ import tn.esprit.spring.kaddem.entities.Universite;
 
 @Repository
 public interface UniversiteRepository extends CrudRepository<Universite,Integer> {
+  List<Universite> findUniversitesByDateRange(Date startDate, Date endDate);
+
 
 
 }
