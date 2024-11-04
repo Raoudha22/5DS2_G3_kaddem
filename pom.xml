@@ -10,7 +10,6 @@
     <groupId>tn.esprit.spring</groupId>
     <artifactId>kaddem</artifactId>
     <version>0.0.3-RELEASE</version>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>kaddem</name>
     <description>kaddem</description>
