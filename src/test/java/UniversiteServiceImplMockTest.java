@@ -14,7 +14,8 @@ import tn.esprit.spring.kaddem.services.UniversiteServiceImpl;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
-
+@SpringBootTest
+@AutoConfigureMockMvc
 @ExtendWith(MockitoExtension.class)
 public class UniversiteServiceImplMockTest {
 
