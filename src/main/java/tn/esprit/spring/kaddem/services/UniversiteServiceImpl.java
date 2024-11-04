@@ -22,6 +22,11 @@ public class UniversiteServiceImpl implements IUniversiteService{
   public   List<Universite> retrieveAllUniversites(){
 return (List<Universite>) universiteRepository.findAll();
     }
+    
+    public Universite affectUniversiteToDepartement(Integer universiteId, Integer departementId) {
+    // Method implementation here
+    }
+
 
  public    Universite addUniversite (Universite  u){
 return  (universiteRepository.save(u));
