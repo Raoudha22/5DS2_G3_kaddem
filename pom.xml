@@ -16,6 +16,7 @@
     <description>kaddem</description>
     <properties>
         <java.version>17</java.version>
+        <springdoc.version>1.6.9</springdoc.version>
     </properties>
     <dependencies>
         <dependency>
