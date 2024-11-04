@@ -30,6 +30,11 @@ public class Universite implements Serializable{
         this.idUniv = idUniv;
         this.nomUniv = nomUniv;
     }
+    
+    public void setIdUniversite(Integer id) {
+    this.idUniversite = id;
+    }
+
 
     public Set<Departement> getDepartements() {
         return departements;
