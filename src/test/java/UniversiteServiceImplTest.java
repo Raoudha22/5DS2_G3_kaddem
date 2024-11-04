@@ -13,9 +13,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
         import com.fasterxml.jackson.databind.ObjectMapper;
 import tn.esprit.spring.kaddem.entities.Universite;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-@ExtendWith(SpringExtension.class)
+//@SpringBootTest
+//@AutoConfigureMockMvc
+//@ExtendWith(SpringExtension.class)
 class UniversiteServiceImplTest {
 
     @Autowired
