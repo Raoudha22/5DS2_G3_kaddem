@@ -3,12 +3,12 @@ services:
   mysqldb:
     container_name: mysqldb
     image: mysql:8
-    restart: unless-stopped
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - /home/mysql/data:/var/lib/mysql
-    
+
 
 
   spring_app:
