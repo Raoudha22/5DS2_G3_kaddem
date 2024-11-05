@@ -11,10 +11,12 @@ import tn.esprit.spring.kaddem.services.DetailEquipeServiceImpl;
 
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class DetailEquipeServiceImplTest {
+class DetailEquipeMockitoTest {
 
     @InjectMocks
     private DetailEquipeServiceImpl detailEquipeService;
@@ -37,9 +39,9 @@ class DetailEquipeServiceImplTest {
         DetailEquipe createdDetailEquipe = detailEquipeService.addDetailEquipe(detailEquipe);
 
         // Then
-        assertThat(createdDetailEquipe).isNotNull();
-        assertThat(createdDetailEquipe.getSalle()).isEqualTo(101);
-        assertThat(createdDetailEquipe.getThematique()).isEqualTo("Research");
+        assertNotNull(createdDetailEquipe);
+        assertEquals(101, createdDetailEquipe.getSalle());
+        assertEquals("Research", createdDetailEquipe.getThematique());
         verify(detailEquipeRepository, times(1)).save(detailEquipe);
     }
 
@@ -53,8 +55,8 @@ class DetailEquipeServiceImplTest {
         DetailEquipe retrievedDetailEquipe = detailEquipeService.retrieveDetailEquipe(1);
 
         // Then
-        assertThat(retrievedDetailEquipe).isNotNull();
-        assertThat(retrievedDetailEquipe.getIdDetailEquipe()).isEqualTo(1);
+        assertNotNull(retrievedDetailEquipe);
+        assertEquals(1, retrievedDetailEquipe.getIdDetailEquipe());
         verify(detailEquipeRepository, times(1)).findById(1);
     }
 
@@ -70,5 +72,4 @@ class DetailEquipeServiceImplTest {
         // Then
         verify(detailEquipeRepository, times(1)).delete(detailEquipe);
     }
-
 }
